@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  - let results = [{umberlla_color:"Black",umberlla_size:"small",umberlla_cost:"$30"},{umberlla_color:"White",umberlla_size:"large",umberlla_cost:"$25"},{umberlla_color:"Blue",umberlla_size:"medium",umberlla_cost:"$20"}]
+  div(class="container-fluid")
+    div(class="row")
+      each item,index in results
+        div(class="col-sm-2",onClick=`buy(${index})`)
+          p Color is #{item.umberlla_color}
+          p size is #{item.umberlla_size}
+          p cost is #{item.umberlla_cost}
+          
+          
